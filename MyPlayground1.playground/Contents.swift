@@ -21,7 +21,6 @@ player name is \(name)
     }
 }
 
-
 class professionalPlayer : player {
     let exp : Int
     let retiremetAge: Int
@@ -31,10 +30,6 @@ class professionalPlayer : player {
         super.init(name: name, game: game, age: age)
     }
 }
-let Player1 = professionalPlayer(name: "Musa", game:"dota" , age: 21, exp: 5, retiremetAge: 22)
-Player1.playerInfo
-print(Player1.playerInfo)
-
 protocol politePlayer {
     var friend: [player] {get}
     var haveFriend : Bool {get}
@@ -61,3 +56,9 @@ extension professionalPlayer: politePlayer{
     
     
 }
+
+let Player1 = professionalPlayer(name: "Musa", game:"dota" , age: 21, exp: 5, retiremetAge: 22)
+Player1.playerInfo
+print(Player1.playerInfo)
+
+
