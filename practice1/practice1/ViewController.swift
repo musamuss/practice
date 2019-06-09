@@ -10,11 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var celcioslabal: UILabel!
+    @IBOutlet weak var faringate: UILabel!
+    @IBOutlet weak var slider: UISlider! {
+        didSet {
+            slider.maximumValue = 100
+            slider.minimumValue = 0
+            
+            
+        }
     }
-
-
+    
+    @IBAction func slederValuechange(_ sender: UISlider){
+        let temperature = Int(round(sender.value))
+        celcioslabal.text = "\(temperature)"
+        let faringatetemperarure = (sender.value * 9/5) + 32
+        faringate.text = "\(faringatetemperarure)"
+    }
 }
 
